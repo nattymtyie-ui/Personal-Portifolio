@@ -256,42 +256,99 @@ body {
     font-size: 1.1rem;
     color: var(--gray);
 }
+/* === Skills Section - Two Columns (Blue Theme) === */
+.skills {
+    margin-top: 40px;
+}
 
 .skills h3 {
-    margin: 30px 0 20px;
+    font-size: 1.5rem;
     color: var(--secondary);
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-align: center;
 }
 
-.skill-bars {
-    margin-top: 20px;
+.skills-columns {
+    display: flex;
+    gap: 3rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
-.skill {
+.skills-column {
+    flex: 1;
+    min-width: 300px;
+    background: var(--light);
+    padding: 25px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.skills-column h4 {
+    font-size: 1.3rem;
+    color: var(--primary);
     margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
 }
 
-.skill span {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
 }
 
-.bar {
-    height: 10px;
+.skill-item {
+    display: flex;
+    align-items: center;
+    padding: 12px;
     background: var(--light-gray);
-    border-radius: 5px;
-    overflow: hidden;
+    border-radius: 8px;
+    transition: var(--transition);
+    cursor: default;
 }
 
-.bar div {
-    height: 100%;
-    border-radius: 5px;
+.skill-item:hover {
+    background: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(67, 97, 238, 0.2);
 }
 
-.html { width: 95%; background: var(--primary); }
-.js { width: 90%; background: #f7df1e; }
-.react { width: 85%; background: #61dbfb; }
-.ui { width: 80%; background: #ff6b6b; }
+.skill-item i {
+    font-size: 1.2rem;
+    color: var(--primary);
+    margin-right: 10px;
+    width: 28px;
+    text-align: center;
+}
+
+.skill-item span {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--dark);
+}
+
+.skill-item:hover i,
+.skill-item:hover span {
+    color: white;
+}
+
+/* Responsive for Mobile */
+@media (max-width: 768px) {
+    .skills-columns {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .skills-column {
+        min-width: auto;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 .about-image {
     flex: 1;
