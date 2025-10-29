@@ -161,52 +161,50 @@ body {
     font-size: 1.5rem;
 }
 
-/* Hero Section */
 .hero {
-  padding: 50px 0; /* reduce padding so image sits closer to nav */
-  background-color: #f8f9fa;
-  position: relative;
-  z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    align-items: center; /* This centers everything vertically */
+    justify-content: center;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
 }
 
-.hero-layout {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 2rem;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
 }
 
-/* Left Text */
+.hero-content {
+    display: flex;
+    align-items: center; /* Centers children vertically */
+    justify-content: space-between;
+    gap: 3rem;
+    width: 100%;
+}
+
 .hero-text {
-  flex: 1;
-  text-align: left;
+    /* Force this text block to be centered vertically within its container */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; /* Keep text left-aligned unless you want center */
+    max-width: 500px;
+    height: 100%; /* Optional: helps with vertical centering if needed */
 }
 
-.hero-text h1 {
-  font-size: 2.8rem;
-  font-weight: 700;
-  color: #222;
-  margin-bottom: 10px;
+/* Optional: If you want text inside .hero-text to be centered horizontally */
+.hero-text.centered {
+    align-items: center;
 }
 
-.hero-text h1 span {
-  color: #007bff;
+ 
+.hero-text .btn {
+  margin-right: 10px;
 }
-
-.hero-text h2 {
-  font-size: 1.5rem;
-  color: #555;
-  margin-bottom: 15px;
-}
-
-.hero-text p {
-  font-size: 1.1rem;
-  color: #666;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
+ 
 /* Buttons */
 .hero-btns {
   display: flex;
@@ -248,16 +246,15 @@ body {
   flex: 1;
   text-align: right;
 }
-
 .hero-image img {
-  width: 400%;
+  width: 100%;
   max-width: 400px;
-  min-height: 55vh;
-  border-radius: 20px;
+  height: auto;
+  aspect-ratio: 3 / 4; /* creates a portrait-oriented rectangle (adjust as needed) */
+  border-radius: 50%; /* makes it oval if width ≠ height, or circle if equal */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  display: inline-block;
-  vertical-align: top;
-  margin-top: 0; /* ensures it's right under the nav */
+  object-fit: cover; /* ensures image fills the shape without distortion */
+  margin-top: -20px; /* use positive margin or padding instead of negative */
 }
 
 /* Responsive Design */
@@ -603,7 +600,8 @@ body {
 
 /* Footer */
 footer {
-    background: var(--dark);
+
+    background: #0622c2; /* Light blue background */  
     color: white;
     text-align: center;
     padding: 25px 0;
