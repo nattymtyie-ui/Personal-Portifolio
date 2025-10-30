@@ -90,3 +90,28 @@ document.querySelectorAll('.about, .projects, .contact').forEach(section => {
 document.querySelectorAll('.project-card, .skill, .contact-info, .contact-form').forEach(el => {
     el.classList.add('fade-in');
 });
+const form = document.querySelector('.contact-form');
+
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('https://formspree.io/f/xdkpdwva', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('✅ Message sent! Thank you for reaching out.');
+        form.reset();
+      } else {
+        alert('❌ Something went wrong. Please try again later.');
+      }
+    } catch (error) {
+      alert('⚠️ Network error: ' + error.message);
+    }
+  });
+}

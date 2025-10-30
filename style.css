@@ -199,10 +199,26 @@ body {
 .hero-text.centered {
     align-items: center;
 }
-
- 
 .hero-text .btn {
   margin-right: 10px;
+}
+/* Hero text font sizes */
+.hero-text h1 {
+  font-size: 3.5rem;       /* Adjust as needed */
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+.hero-text h1 span {
+  color: #007bff; /* Matches your primary button blue */
+  font-weight: bold;
+}
+
+.hero-text h2,
+.hero-text p {
+  font-size: 1.8rem;       /* Subheading or description */
+  margin: 0 0 2rem 0;
+  color: #555;
+  line-height: 1.4;
 }
  
 /* Buttons */
@@ -240,6 +256,7 @@ body {
   background-color: #007bff;
   color: white;
 }
+
 
 /* Right Image */
 .hero-image {
@@ -601,7 +618,7 @@ body {
 /* Footer */
 footer {
 
-    background: #0622c2; /* Light blue background */  
+    background: #1d285c68; /* Light blue background */  
     color: white;
     text-align: center;
     padding: 25px 0;
@@ -807,4 +824,19 @@ footer {
 
 }
 
+}
+/* Contact Form Button */
+button[type="submit"] {
+  background-color: #007BFF;   /* Blue */
+  color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;   /* Darker blue on hover */
 }
